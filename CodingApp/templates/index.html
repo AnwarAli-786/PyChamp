@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <title>PyChamp : Online Python Interpreter</title>
+  </head>
+  <body style="font-family:Libre Baskerville;background-color: rgb(5, 112, 131)"><br>
+    <h1 style="text-align:center;color:rgb(252, 252, 249);"><strong>PyChamp</strong></h1><br>
+
+    <form action="/runcode" method="post">
+      {% csrf_token %}
+  <div class="form-group" style="margin-left:50px;margin-right:50px;color:rgb(239, 241, 241);">
+    <label for="codearea"><b>Write Your Code Here</b></label>
+    <textarea type="text" class="form-control" id="codearea" name="codearea" rows="10" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{ code }}</textarea>
+  </div>
+
+  <div class="form-group" style="margin-left:50px;margin-right:50px;color:rgb(240, 246, 247);">
+    <label for="output"><b>Output</b></label>
+    <textarea type="text" class="form-control" id="output" name="output" rows="4" disabled> {{ output }} </textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary" style="margin-left:50px;">Run Code</button>
+</form>
+<!--<footer>
+  <p>Created by 
+  <a href="https:geekysession.blogspot.com">Geeky Session</a></p>
+</footer> -->
+
+
+<footer class="text-center text-white" style="background-color: rgb(5, 112, 131);">
+  <!-- Grid container -->
+  <div class="container pt-4" >
+    <!-- Section: Social media -->
+    <section class="mb-4" >
+      <!--add social link-->
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center text-white p-3" style="background-color: rgb(5, 112, 131);">
+    © 2022 Copyright: 
+    <a class="text-white" href="https:geekysession.blogspot.com">Geeky Session</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+  </body>
+</html>
